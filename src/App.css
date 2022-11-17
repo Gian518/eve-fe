@@ -1,40 +1,135 @@
 @import '~antd/dist/antd.css';
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (prefers-color-scheme: light){
+  :root{
+    --background: #FCF0F4;
+    --base: #F7D4E0;
+    --secondary: #6F4653;
+    --primary: #DE8CA7;
+    --text: #000000;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (prefers-color-scheme: dark){
+  :root{
+    --background: #1F1C1C;
+    --base: #60142A;
+    --secondary: #C12854;
+    --primary: #F23269;
+    --text: #E9E8EA;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  color: var(--text);
+}
+
+.btn-transparent{
+  background-color: transparent;
+  border: 0;
+  color: var(--primary);
+}
+
+/**** Menu.tsx ****/
+.main-menu-wrapper{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 15px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-menu-lg{
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-menu-md{
+  display: none;
+}
+
+.main-menu{
+  width: 100%;
+  /* justify-content: space-between; */
+  border-bottom: 0;
+}
+
+.main-menu-logo{
+  object-fit: contain;
+  width: 200px;
+}
+
+.main-menu-button{
+  padding: 8px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.main-menu-button:hover{
+  color: var(--primary);
+}
+
+.main-menu-button-highlight{
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.main-menu-hr{
+  height: .25rem;
+  margin: 0;
+  margin-top: 5px;
+  border: none;
+  background-color: var(--primary);
+  transition: .3s ease-in-out;
+}
+
+.main-menu-mobile{
+  background-color: var(--background);
+}
+
+.ant-drawer-header-title{
+  justify-content: flex-end;
+}
+
+.ant-drawer-close{
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu-button-mobile,
+.main-menu-button-mobile:active,
+.main-menu-button-mobile:hover{
+  margin-bottom: 7px;
+  padding-bottom: 3px;
+  color: var(--text);
+  font-size: 22px;
+}
+
+.main-menu-button-mobile-highlight,
+.main-menu-button-mobile-highlight:active,
+.main-menu-button-mobile-highlight:focus{
+  color: var(--primary) !important;
+  font-weight: 500;
+  border-bottom: .25rem solid var(--primary) !important;
+}
+
+@media (min-width: 992px){
+  .main-menu-lg{
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 991px){
+  .main-menu-md{
+    display: block;
   }
 }

@@ -40,6 +40,7 @@ const App = () => {
 
 	/**** GLOBAL STATE ****/
 	const [language, setLanguage] = useGlobal<any>('language')
+	const [colorScheme, setColorScheme] = useGlobal<any>('colorScheme')
 
 	/**** STATE VARIABLES ****/
 	const [router, setRouter] = useState<any>()
@@ -50,7 +51,20 @@ const App = () => {
 
 	/**** BOOT ****/
 	useEffect(() => {
+		// Load the user language
 		loadLanguage()
+
+		// Check for user color scheme and then add the listener
+		if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+			setColorScheme('dark')
+		} else {
+			setColorScheme('light')
+		}
+
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+			const scheme = event.matches ? "dark" : "light"
+			setColorScheme(scheme)
+		})
 	}, [])
 
 	/**
