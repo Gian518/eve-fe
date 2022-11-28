@@ -42,7 +42,7 @@ const useColors = (): {
                 text: "#E9E8EA"
             })
         }
-    })
+    }, [colorScheme])
 
     return colors
 

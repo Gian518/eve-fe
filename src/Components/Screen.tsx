@@ -9,6 +9,9 @@ import API from '../API'
 import NotFound from '../Screens/NotFound'
 import Page from '../Screens/Page'
 import Home from '../Screens/Home'
+import Biography from '../Screens/Biography'
+import Gallery from '../Screens/Gallery'
+import Contacts from '../Screens/Contacts'
 
 /**
  * ** SCREEN **
@@ -63,7 +66,7 @@ const Screen = () => {
 			if(isHome){
 				document.title = 'Evelyn Iuliano'
 			} else {
-				document.title = 'Evelyn Iuliano' + ' - ' + data.title
+				document.title = 'Evelyn Iuliano' + ' - ' + data.post_title
 			}
 
 			setStatus('loaded')
@@ -89,6 +92,7 @@ const Screen = () => {
 						postTitle={page.post_title}
 						postContent={page.post_content}
 						featured={page.featured}
+						meta={page.meta}
 					/>
 
 					// "Homepage" template
@@ -98,12 +102,42 @@ const Screen = () => {
 						postTitle={page.post_title}
 						postContent={page.post_content}
 						featured={page.featured}
+						meta={page.meta}
+					/>
+
+					// "Biography" template
+					: page.template == 'biography.php' ?
+					<Biography
+						ID={page.ID}
+						postTitle={page.post_title}
+						postContent={page.post_content}
+						featured={page.featured}
+						meta={page.meta}
+					/>
+
+					// "Gallery" template
+					: page.template == 'gallery.php' ?
+					<Gallery
+						ID={page.ID}
+						postTitle={page.post_title}
+						postContent={page.post_content}
+						featured={page.featured}
+						meta={page.meta}
+					/>
+
+					// "Contacts" template
+					: page.template == 'contacts.php' ?
+					<Contacts
+						ID={page.ID}
+						postTitle={page.post_title}
+						postContent={page.post_content}
+						featured={page.featured}
+						meta={page.meta}
 					/>
 
 					// Nothing happens
 					: null
 				)
-				// <div dangerouslySetInnerHTML={{ __html: page.post_content }}/>
 				: status == 'not-found' ?
 				<NotFound/>
 				:

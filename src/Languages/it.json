@@ -1,8 +1,20 @@
 {
     "attendere": "Attendere",
     "verificatoErrore": "Si è verificato un errore",
+    "apri": "apri",
 
     "ohNo": "Oh no!",
     "paginaNonTrovata": "La pagina richiesta non è stata trovata",
-    "tornaAllaHome": "Vai alla home"
+    "tornaAllaHome": "Vai alla home",
+
+    "biografia": "Biografia",
+
+    "immagini": "Immagini",
+    "video": "Video",
+
+    "contatti": "Contatti",
+    "tuoNome": "Il tuo nome",
+    "tuoIndirizzo": "Il tuo indirizzo",
+    "messaggio": "Messaggio",
+    "invia": "Invia"
 }

@@ -8,13 +8,15 @@ type PageType = {
     featured: string,
     postTitle: string,
     postContent: string,
+    meta: any
 }
 
 const Page = ({
     ID,
     featured,
     postTitle,
-    postContent
+    postContent,
+    meta
 }: PageType) => {
 
     /**** STATE VARIABLES ****/
@@ -27,13 +29,7 @@ const Page = ({
 
     return (
 		<div>
-			{
-				posts.length == 0
-				?
-				'Waiting'
-				:
-				<div dangerouslySetInnerHTML={{ __html: posts[0].content.rendered.toString() }}/>
-			}
+			<div dangerouslySetInnerHTML={{ __html: postContent }}/>
 		</div>
 	)
 

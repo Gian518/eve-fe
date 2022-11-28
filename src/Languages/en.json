@@ -1,8 +1,20 @@
 {
     "attendere": "Waiting",
     "verificatoErrore": "An error has occurred",
+    "apri": "open",
     
     "ohNo": "Oh no!",
     "paginaNonTrovata": "The page you've requested cannot be found",
-    "tornaAllaHome": "Go to homepage"
+    "tornaAllaHome": "Go to homepage",
+
+    "biografia": "Biography",
+
+    "immagini": "Immagini",
+    "video": "Videos",
+
+    "contatti": "Contacts",
+    "tuoNome": "Your name",
+    "tuoIndirizzo": "Your address",
+    "messaggio": "Message",
+    "invia": "Send"
 }

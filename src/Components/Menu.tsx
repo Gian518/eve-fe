@@ -39,12 +39,11 @@ const Menu = (
         // Setting parameters for menu animations
         const maxWidth = 100 / items.length
         setBaseNumber(maxWidth)
-        items.map((item: any, index: number) => {
-            if(currentRoute == item.key){
-                setHrMargin(maxWidth * index)
-                setInitialHr(maxWidth * index)
-            }
-        })
+        let index = items.findIndex((item: any) => item.key == currentRoute)
+        if(index != -1){
+            setHrMargin(maxWidth * index)
+            setInitialHr(maxWidth * index)
+        }
 
         // Setting width for menu, based on items count
         if(items.length >= 6 && items.length < 8){
@@ -71,6 +70,7 @@ const Menu = (
                     items.map((item: any, index: number) => {
                         return(
                             <Link
+                                key={item.key}
                                 to={item.key}
                                 className={'main-menu-button' + (selected == item.key ? ' main-menu-button-highlight' : '')}
                                 style={{ width: baseNumber.toString() + '%', display: 'inline-block', textAlign: 'center' }}
@@ -120,6 +120,7 @@ const Menu = (
                         items.map((item: any, index: number) => {
                             return(
                                 <Link
+                                    key={item.key}
                                     to={item.key}
                                     className={'main-menu-button-mobile' + (selected == item.key ? ' main-menu-button-mobile-highlight' : '')}
                                     onClick={() => setMobileDrawer(false)}

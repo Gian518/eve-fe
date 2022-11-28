@@ -2,6 +2,7 @@ import React from 'reactn'
 
 // Custom components
 import Menu from './Menu'
+import Footer from './Footer'
 
 // Libraries
 import { Outlet, useRouteError } from 'react-router-dom'
@@ -23,6 +24,7 @@ const Root = (
             <div id="detail">
                 <Outlet/>
             </div>
+            <Footer/>
         </>
     )
 }
