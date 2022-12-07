@@ -1,5 +1,6 @@
 {
     "attendere": "Waiting",
+    "errore": "Error",
     "verificatoErrore": "An error has occurred",
     "apri": "open",
     
@@ -16,5 +17,13 @@
     "tuoNome": "Your name",
     "tuoIndirizzo": "Your address",
     "messaggio": "Message",
-    "invia": "Send"
+    "invia": "Send",
+    "nomeObbligatorio": "Please input your name",
+    "mailObbligatoria": "Please input your E-Mail address",
+    "mailValida": "The address must be a valid E-Mail address",
+    "messObbligatorio": "Please input your message",
+    "grazie": "Thank you!",
+    "messInviato": "The message has been sent successfully",
+    "messErrore": "An error has occurred while sending the message. Please, try again later.",
+    "seguiSocial": "Follow me on social networks:"
 }

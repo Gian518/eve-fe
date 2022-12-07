@@ -1,12 +1,16 @@
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 
 // Third-party components
 import { Row, Col } from 'antd'
 
 // Libraries
-import env from '../Config/env'
+import SocialIterator from './SocialIterator'
 
 const Footer = () => {
+
+    /**** GLOBAL STATE ****/
+    const [authorName, setAuthorName] = useGlobal<any>('authorName')
+    const [authorMail, setAuthorMail] = useGlobal<any>('authorMail')
 
     return(
         <Row className='footer-container' style={{ marginTop: 50 }}>
@@ -15,7 +19,9 @@ const Footer = () => {
                 span={20}
                 offset={2}
             >
-                {env.authorName} - <a href={'mailto:' + env.authorMail} className="footer-mail">{env.authorMail}</a>
+                {authorName} - <a href={'mailto:' + authorMail} className="footer-mail">{authorMail}</a>
+                <span style={{ marginLeft: 5, marginRight: 5 }}>-</span>
+                <SocialIterator/>
             </Col>
         </Row>
     )

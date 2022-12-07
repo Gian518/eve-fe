@@ -1,5 +1,6 @@
 {
     "attendere": "Attendere",
+    "errore": "Errore",
     "verificatoErrore": "Si è verificato un errore",
     "apri": "apri",
 
@@ -16,5 +17,13 @@
     "tuoNome": "Il tuo nome",
     "tuoIndirizzo": "Il tuo indirizzo",
     "messaggio": "Messaggio",
-    "invia": "Invia"
+    "invia": "Invia",
+    "nomeObbligatorio": "Il nome è obbligatorio",
+    "mailObbligatoria": "L'indirizzo E-Mail è obbligatorio",
+    "mailValida": "Inserisci un indirizzo E-Mail valido",
+    "messObbligatorio": "Il messaggio è obbligatorio",
+    "grazie": "Grazie!",
+    "messInviato": "Il messaggio è stato inviato correttamente.",
+    "messErrore": "Si è verificato un errore durante l'invio. Riprova più tardi.",
+    "seguiSocial": "Seguimi sui social:"
 }

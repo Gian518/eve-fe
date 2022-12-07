@@ -64,7 +64,9 @@ const Menu = (
         loaded
         ?
         <div className='main-menu-wrapper'>
-            <img src={colorScheme == 'dark' ? logoDark : logoLight} alt='Logo' className='main-menu-logo'/>
+            <Link to={'/'}>
+                <img src={colorScheme == 'dark' ? logoDark : logoLight} alt='Logo' className='main-menu-logo'/>
+            </Link>
             <div className='main-menu-lg' style={{ width: menuWidth.toString() + '%' }}>
                 {
                     items.map((item: any, index: number) => {

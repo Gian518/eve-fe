@@ -41,6 +41,9 @@ const App = () => {
 	/**** GLOBAL STATE ****/
 	const [language, setLanguage] = useGlobal<any>('language')
 	const [colorScheme, setColorScheme] = useGlobal<any>('colorScheme')
+	const [authorName, setAuthorName] = useGlobal<any>('authorName')
+	const [authorMail, setAuthorMail] = useGlobal<any>('authorMail')
+	const [social, setSocial] = useGlobal<any>('social')
 
 	/**** STATE VARIABLES ****/
 	const [router, setRouter] = useState<any>()
@@ -92,6 +95,16 @@ const App = () => {
 	 */
 	const loadData = async () => {
         try {
+			const init = await API.General.loadSite()
+			console.log("INIT data:", init)
+			if(init){
+				setAuthorName(init.author_name)
+				setAuthorMail(init.author_mail)
+				setSocial(init.social)
+			} else {
+				throw init
+			}
+			
             const data = await API.General.menu('main-' + language)
             console.log("Menu APIs data:", data)
             if(data){

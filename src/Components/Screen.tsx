@@ -12,6 +12,7 @@ import Home from '../Screens/Home'
 import Biography from '../Screens/Biography'
 import Gallery from '../Screens/Gallery'
 import Contacts from '../Screens/Contacts'
+import env from '../Config/env'
 
 /**
  * ** SCREEN **
@@ -26,6 +27,7 @@ const Screen = () => {
 
 	/**** GLOBAL STATE ****/
 	const [language, setLanguage] = useGlobal<any>('language')
+	const [authorName, setAuthorName] = useGlobal<any>('authorName')
 
     /**** STATE VARIABLES ****/
     const [page, setPage] = useState<any>(null)
@@ -64,15 +66,15 @@ const Screen = () => {
 
 			// Setting page title
 			if(isHome){
-				document.title = 'Evelyn Iuliano'
+				document.title = authorName
 			} else {
-				document.title = 'Evelyn Iuliano' + ' - ' + data.post_title
+				document.title = authorName + ' - ' + data.post_title
 			}
 
 			setStatus('loaded')
         } catch (err) {
             console.log("Error in Screen.getPage:", err)
-			document.title = 'Evelyn Iuliano'
+			document.title = env.authorName
 			setStatus('not-found')
         }
     }

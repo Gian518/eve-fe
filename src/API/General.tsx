@@ -9,6 +9,14 @@ const menu = async (slug: string) => {
     return res.json()
 }
 
+/**
+ * Send a mail to the admin, with the specified parameters
+ * @param param Params are in an object:
+ *      - name: the name of the user
+ *      - address: the E-Mail address of the user
+ *      - content: the message that the user has written
+ * @returns {Promise}
+ */
 const sendMail = async ({
     name,
     address,
@@ -36,7 +44,21 @@ const sendMail = async ({
     return res.json()
 }
 
+/**
+ * Retrive initial website data
+ * @returns {Promise}
+ */
+const loadSite = async () => {
+    const url = env.api + '/loadSite'
+    const res = await fetch(url, {
+        method: 'GET'
+    })
+    
+    return res.json()
+}
+
 export {
     menu,
-    sendMail
+    sendMail,
+    loadSite
 }

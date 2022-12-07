@@ -54,9 +54,11 @@ const Home = ({
                 <Col
                     xs={{ span: 20, offset: 2, order: 1 }}
                     lg={{ span: 8, offset: 4, order: 0 }}
-                    style={{ alignItems: 'center' }}
+                    style={{ alignItems: 'center', marginTop: dimensions.width < 992 ? 20 : 0 }}
                 >
-                    <img className='img-fluid' src={meta.home_bio.home_bio_photo} alt='Immagine bio'/>
+                    <div className='img-frame'>
+                        <img className='img-fluid' src={meta.home_bio.home_bio_photo} alt='Immagine bio'/>
+                    </div>
                 </Col>
                 <Col
                     xs={{ span: 20, offset: 2, order: 0 }}

@@ -58,6 +58,14 @@ h6,
   font-weight: 400;
 }
 
+a{
+  color: var(--primary);
+}
+
+a:hover{
+  color: var(--secondary);
+}
+
 /**** Generals ****/
 .container {
   padding-right: 15px;
@@ -115,6 +123,17 @@ h6,
   max-width: none;
 }
 
+.img-frame::before{
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--primary);
+  z-index: -1;
+}
+
 .mt-fluid{
   margin-top: 100px;
 }
@@ -123,6 +142,13 @@ h6,
   background-color: transparent;
   border: 0;
   color: var(--primary);
+}
+
+@media (max-width: 992px){
+  .img-frame::before{
+    top: -20px;
+    left: -20px;
+  }
 }
 
 @media (max-width: 975px){
@@ -283,6 +309,7 @@ h6,
 }
 
 /**** Home.tsx ****/
+
 .home-quote-title{
   margin: 7px;
   line-height: 1;
@@ -327,14 +354,11 @@ h6,
 
 
 /**** Contacts.tsx ****/
-.contacts-featured{
-  border-radius: 20px;
-}
-
-.contacts-input{
+.contacts-input,
+.contacts-input:hover{
   border: 1px solid var(--primary);
   border-radius: 7px;
-  background-color: var(--base);
+  background-color: var(--base) !important;
   color: var(--text);
 }
 
@@ -349,6 +373,25 @@ h6,
 }
 
 .contacts-send:active,
-.contacts-send:focus{
+.contacts-send:focus,
+.contacts-send:hover{
   background-color: var(--secondary);
+}
+
+.contacts-result{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-result-title{
+  color: var(--text);
+  font-size: 30px;
+}
+
+.ant-result-subtitle{
+  color: var(--text);
+  font-size: 18px;
 }

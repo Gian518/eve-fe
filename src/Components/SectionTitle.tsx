@@ -4,7 +4,7 @@ import { CSSProperties } from 'react'
 type SectionTitleType = {
     title: string,
     type?: 'elegant'|'standard',
-    size?: 'big'|'normal'|'small',
+    size?: 'big'|'normal'|'small'|'extrasmall',
     bottom?: number
     style?: CSSProperties
 }
@@ -37,6 +37,10 @@ const SectionTitle = ({
             setFontSize(25)
             setHrWidth(30)
             setHrBorder(3)
+        } else if(size == 'extrasmall') {
+            setFontSize(20)
+            setHrWidth(25)
+            setHrBorder(2)
         }
 
         // Setting additional classes for h1 element

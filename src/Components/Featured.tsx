@@ -29,7 +29,7 @@ const Featured = ({
             }}
         >
             <div className='sheer-layer'>
-                <h1>{text}</h1>
+                <h1 style={{ color: '#FFFFFF' }}>{text}</h1>
             </div>
         </div>
     )
